@@ -1,0 +1,36 @@
+.categories{
+    margin-top: 20px;
+    display: flex;
+}
+
+.category{
+    padding: 8px;
+    border:solid black 1px;
+    width:120px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.category-container{
+    border:solid burlywood 1px;
+    padding:10px;
+   
+}
+
+.product{
+    display: flex;
+    width: 100%;
+    gap: 10px;
+    padding:4px;
+}
+
+.price{
+    color:rgb(3, 95, 3);
+    font-weight: bold;
+}
+
+.filter{
+    display: flex;
+    gap:30px;
+    margin:10px;
+}

@@ -1,0 +1,42 @@
+
+<div class="categories">
+    <div class="category" (click)="selectCategory(category)" *ngFor="let category of categories" 
+    [ngStyle]="{backgroundColor:this.selectedCategory==category?'skyblue':'#fff'}">{{category}}</div>
+</div>
+
+<div class="filter">
+    <span>
+        Filter by price : &nbsp;
+        <select [(ngModel)]="priceRange">
+            <option *ngFor="let item of priceLimits" [value]="item">{{item | currency:'INR'}}</option>
+        </select>
+    </span>
+    <span>
+        Filter by Brand : &nbsp;
+        <select [(ngModel)]="selectedBrand">
+            <option value="all">All</option>
+            <option *ngFor="let brand of brands" [value]="brand">{{brand}}</option>
+        </select>
+    </span>
+    <span style="font-weight: bold;">{{container.childElementCount}} search results </span>
+
+</div>
+
+<div class="category-container" #container>
+    <div *ngFor="let product of products;index as i;even as isEven; odd as isOdd;count as count">
+        
+        <div class="product" *ngIf="(this.selectedCategory==product.category || this.selectedCategory=='All') 
+            && product.price<=priceRange
+            && (this.selectedBrand == 'all' || this.selectedBrand == product.brand)" 
+            [ngStyle]="{backgroundColor:isEven?'rgb(243, 236, 228)':'initial'}">
+            <p style="color:crimson;font-weight: bolder;">{{product.productId}}</p>
+            <p>{{product.description}}</p>
+            <p class="price">{{product.price | currency :'INR'}}</p>
+            
+        </div>
+    </div>
+</div>
+
+<div>
+    wanna create a new product? click <a [routerLink]="['/create-product']" routerLinkActive="router-link-active" >here</a>
+</div>

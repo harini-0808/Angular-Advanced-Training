@@ -1,0 +1,9 @@
+<div [ngStyle]="{color:this.theme=='dark'?'white' : 'black'}">
+  
+    <div id="toggle-btn" (click)="toggleTheme();slide()" #toggleBtn>
+        <div [ngStyle]="{backgroundColor:this.theme=='light'?'white' : 'black'}" id="slider" #slider>
+        </div>
+    </div>
+    
+   
+</div>

@@ -1,0 +1,23 @@
+
+<form action="" method="post" class="needs-validation" novalidate #form (submit)="OnSubmit($event)">
+    <div class="mb-3">
+        <label for="username" class="form-label">Username</label>
+        <input type="text" name="username" id="username" 
+        [(ngModel)]="username"
+        class="form-control" placeholder="johndoe1" required>
+        <div class="invalid-feedback">
+            please provide a valid username
+          </div>
+    </div>
+    <div class="mb-3" style="display: flex;flex-direction: column;">
+        <label for="password" class="form-label">Password</label>
+        <input type="password" name="password" id="password"
+        [(ngModel)]="password" class="form-control" required>
+        <div class="invalid-feedback">
+            password can't be empty
+          </div>
+        <div class="form-text" id="forgot-psswd"><a [routerLink]="'/reset'" >Forgot password ?</a></div>
+    </div>
+    <input type="submit" value="Sign in" class="btn btn-primary">
+    <div class="form-text">Don't have an account? Sign up <a [routerLink]="'/signup'">here</a></div>
+</form>

@@ -1,0 +1,16 @@
+.parent{
+    display: flex;
+    flex-direction: column;
+    gap:50px;
+    height: 280px;
+    background-color: skyblue;
+    padding: 10px;
+    border: solid blue 1px;
+    border-radius: 20px;
+    width: 20vw;
+    margin-bottom: 30px;
+}
+
+ul{
+    overflow-y: scroll;
+}

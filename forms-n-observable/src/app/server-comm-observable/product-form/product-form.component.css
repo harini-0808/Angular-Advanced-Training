@@ -1,0 +1,11 @@
+.prod-container{
+    display: flex;
+    align-items: center;
+    gap: 80px;
+}
+
+.alert{
+    background-color: #820000;
+    color:#fed3d3;
+    padding:1rem;
+}

@@ -1,0 +1,28 @@
+.product-list{
+    min-width: 100vw;
+    min-height: 100vw;
+    padding: 50px;
+    display: flex;
+    background-color: rgba(6, 133, 133, 0.486);
+    gap:50px;
+    align-items: start;
+}
+div{ background-color: rgba(6, 133, 133, 0.486);}
+
+*{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.product{
+    background-color: #fff;
+    padding: 60px;
+}
+
+.desc{
+    font-weight: bold;
+}
+
+.price{
+    font-weight: bold;
+    color:rgb(7, 77, 77);
+}

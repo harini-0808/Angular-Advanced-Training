@@ -1,0 +1,26 @@
+
+<form action="" method="post" class="needs-validation" (submit)="OnSubmit($event)" novalidate #form>
+    <div class="mb-3">
+        <label for="name" class="form-label">Full Name</label>
+        <input type="text" name="name" id="name" class="form-control" placeholder="John Doe" required>
+        <div class="invalid-feedback">name can't be empty</div>
+    </div>
+    <div class="mb-3">
+        <label for="email" class="form-label">Email</label>
+        <input type="email" name="email" id="email" class="form-control" placeholder="johndoe@gmail.com" required>
+        <div class="invalid-feedback">please provide a valid email </div>
+    </div>
+    <div class="mb-3">
+        <label for="password" class="form-label">Password</label>
+        <input type="password" name="password" id="password" class="form-control" required #psswd>
+        <div class="invalid-feedback">password can't be empty</div>
+    </div>
+    <div class="mb-3">
+        <label for="repassword" class="form-label">Confirm Password</label>
+        <input type="password" name="repassword" id="repassword" class="form-control" #repsswd novalidate (input)="validatePsswd()" required>
+        <div class="invalid-feedback">{{repsswd.checkValidity()}}</div>
+    </div>
+    <input type="submit" value="Sign up" class="btn btn-primary">
+    <div class="form-text">Already have an account? Sign in <a [routerLink]="'/login'">here</a></div>
+ 
+</form>

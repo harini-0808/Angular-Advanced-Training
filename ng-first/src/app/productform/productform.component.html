@@ -1,0 +1,44 @@
+<form action="" (ngSubmit)="OnSubmit($event)" class="needs-validation" novalidate #form name="productForm">
+    <h2>Create a new product</h2>
+    <div class="mb-3">
+        <label for="pid" class="form-label">Product ID</label>
+        <input [(ngModel)]="product.productId" type="text" name="pid" id="pid" class="form-control" placeholder="p01" required>
+        <div class="invalid-feedback">
+            please provide a product ID
+        </div>
+    </div>
+    <div class="mb-3">
+        <label for="desc" class="form-label">Description</label>
+        <input [(ngModel)]="product.description" type="text" name="desc" id="desc" class="form-control" placeholder="Samsung A10" required>
+        <div class="invalid-feedback">
+            please provide a description
+        </div>
+    </div>
+    <div class="mb-3">
+        <label for="brand" class="form-label">Brand</label>
+        <input [(ngModel)]="product.brand" type="text" name="brand" id="brand" class="form-control" placeholder="Samsung" required>
+        <div class="invalid-feedback">
+            please provide a brand
+        </div>
+    </div>
+    <div class="mb-3">
+        <label for="price" class="form-label">Price</label>
+        <input [(ngModel)]="product.price" type="number" name="price" id="price" class="form-control" placeholder="20000" required>
+        <div class="invalid-feedback">
+            please provide a price
+        </div>
+    </div>
+    <div class="mb-3">
+        <div><label for="category" class="form-label">Category</label></div>
+        <select [(ngModel)]="product.category" name="category" required>
+            <option *ngFor="let item of availableCategories" [value]="item">{{item}}</option>
+        </select>
+        <div class="invalid-feedback">
+            please provide a category
+        </div>
+    </div>
+    <input type="submit" class="btn btn-primary" value="Add">
+</form>
+<div>
+    <span>View Products By Category <a [routerLink]="['/category']">here</a> </span>
+  </div>

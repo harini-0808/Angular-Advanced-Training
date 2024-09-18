@@ -1,0 +1,13 @@
+form{
+    width:26vw;
+
+}
+
+#forgot-psswd{
+
+    align-self: end;
+}
+
+#forgot-psswd>a{
+    text-decoration: none;
+}

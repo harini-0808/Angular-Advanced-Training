@@ -1,0 +1,22 @@
+.about{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    word-wrap: break-word;
+    text-wrap: wrap;
+    background-color: rgb(142, 229, 142);
+    border: solid darkslategray 1px;
+    border-radius: 20px;
+    padding: 60px;
+    width: 20vw;
+}
+
+p{
+    max-width: 100%;
+}
+
+.container{
+    display: flex;
+    gap:80px;
+    align-items: center;
+}

@@ -1,0 +1,25 @@
+<form action="" (ngSubmit)="OnSubmit()" #form name="productForm">
+    <h2>Fill the details</h2>
+    <div class="mb-3">
+        <label for="name" class="form-label">Name</label>
+        <input [(ngModel)]="name" type="text" name="name" id="name" class="form-control" placeholder="John Doe" required>
+        
+    </div>
+    <div class="mb-3">
+        <label for="age" class="form-label">Age</label>
+        <input [(ngModel)]="age" type="number" name="age" id="age" class="form-control" placeholder="20" required>
+      
+    </div>
+    <div class="mb-3">
+        <label for="job" class="form-label">Job</label>
+        <input [(ngModel)]="job" type="text" name="job" id="job" class="form-control" placeholder="Dev" required>
+        
+    </div>
+    <div class="mb-3">
+        <label for="country" class="form-label">Country</label>
+        <input [(ngModel)]="country" type="text" name="country" id="country" class="form-control" placeholder="India" required>
+        
+    </div>
+
+    <input type="submit" class="btn btn-primary" value="Add">
+</form>

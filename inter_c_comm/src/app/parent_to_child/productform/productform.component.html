@@ -1,0 +1,29 @@
+<div class="prod-container">
+    <form action="" (ngSubmit)="OnSubmit()" #form name="productForm">
+        <h2>Create a new product</h2>
+        <div class="mb-3">
+            <label for="pid" class="form-label">Product ID</label>
+            <input [(ngModel)]="productId" type="text" name="pid" id="pid" class="form-control" placeholder="p01" required>
+            
+        </div>
+        <div class="mb-3">
+            <label for="desc" class="form-label">Description</label>
+            <input [(ngModel)]="description" type="text" name="desc" id="desc" class="form-control" placeholder="Samsung A10" required>
+          
+        </div>
+        <div class="mb-3">
+            <label for="brand" class="form-label">Brand</label>
+            <input [(ngModel)]="brand" type="text" name="brand" id="brand" class="form-control" placeholder="Samsung" required>
+            
+        </div>
+        <div class="mb-3">
+            <label for="price" class="form-label">Price</label>
+            <input [(ngModel)]="price" type="number" name="price" id="price" class="form-control" placeholder="20000" required>
+            
+        </div>
+    
+        <input type="submit" class="btn btn-primary" value="Add">
+    </form>
+    <app-productpreview [price]="this.price" [brand]="this.brand" [description]="this.description" [productId]="this.productId"></app-productpreview>
+</div>
+

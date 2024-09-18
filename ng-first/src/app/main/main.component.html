@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ng-first</title>
+</head>
+<body [ngStyle]="{backgroundColor:this.theme=='dark'?'black' : 'white'}">
+    <app-theme (themeEmitter)="change($event)"></app-theme>
+    <div style="border:solid 1px blue;">
+      <h2>Product Data</h2>
+      <p>Product ID : {{productId}}</p>
+      <p>Description : {{description}}</p>
+      <p>Available : {{available?'available':'unavailable'}}</p>
+      <p>{{orderDate | date : "dd/MM/yyyy"}}</p>
+      <p [textContent]="'Quantity : '+quantity"></p>
+      <p [textContent]="orderQuantity"></p>
+      <div [ngSwitch]="inStock()">
+        <span *ngSwitchCase="1">Abundant in stock</span>
+        <span *ngSwitchCase="0">Few pieces in stock</span>
+      </div>
+      <p>Enter order quantity : <input type="text" name="" id="" [(ngModel)]="orderQuantity" #orderInput></p>
+      <p>Ordered quantity : {{orderQuantity <= quantity ? 'available' : 'unavailable'}}</p>
+      <p>Delivery : <span [style.background-color]="deliveryColor" *ngIf="!orderReady; else elseBlock">Yet to dispatch</span>
+        <ng-template #elseBlock> <span [style.background-color]="deliveryColor" *ngIf="orderReady">Delivered</span>
+        </ng-template>
+      </p>
+     
+      <button (click)="informOrder(orderInput.value);placeOrder();setTimeOut();" [disabled]="quantity<=0">Place Order</button>
+    </div>
+    <div style="border:solid 1px black;">
+      <h2>Recommended Products</h2>
+      <div *ngFor="let product of products" [ngStyle]="{border: 'solid 1px skyblue',padding :'5px'}">
+        <p>Product ID : {{product.productId}}</p>
+        <p>Description : {{product.description}}</p>
+      </div>
+    </div>
+    <div>
+      <span>View Products By Category <a [routerLink]="['/category']">here</a> </span>
+    </div>
+    
+</body>
+</html>

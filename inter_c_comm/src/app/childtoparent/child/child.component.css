@@ -1,0 +1,11 @@
+.child{
+    display: flex;
+    flex-direction: column;
+    align-items:start;
+    gap: 20px;
+    padding: 10px;
+    border: solid green 1px;
+    border-radius: 20px;
+    width: 20vw;
+    background-color: lightgreen;
+}
